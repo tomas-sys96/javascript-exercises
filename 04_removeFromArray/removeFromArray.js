@@ -1,5 +1,10 @@
-const removeFromArray = function(array, arg) {
-  return array.toSpliced(array.indexOf(arg), 1);
+const removeFromArray = function(array, ...args) {
+  let newArray = [...array];
+  for (const arg of args) {
+    newArray.splice(array.indexOf(arg), 1);
+  }
+  
+  return newArray;
 };
 
 // Do not edit below this line
